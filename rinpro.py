@@ -525,10 +525,12 @@ def helpmessage():
 	                "╠❂➣ " + key + "ʙʏᴇ ᴀʟʟ" + "\n" + \
 	                "╠❂➣ " + key + "ʙʏᴇ ᴅɴᴀ" + "\n" + \
 	                "╠❂➣ " + key + "ᴄᴏᴍᴇ ᴅɴᴀ" +  "\n" + \
+	                "╠❂➣ " + key + "ᴄʀᴀsʜ" +  "\n" + \
 	                "╠❂➣ " + key + "ᴄʜᴀɴɢᴇʙɪᴏ:「ǫᴜᴇʀʏ」" + "\n" + \
 	                "╠❂➣ " + key + "ᴄʜᴀɴɢᴇɴᴀᴍᴇ:「ǫᴜᴇʀʏ」" + "\n" + \
 	                "╠❂➣ " + key + "ᴄʟᴏɴᴇᴘʀᴏғɪʟᴇ「ᴍᴇɴᴛɪᴏɴ」" + "\n" + \
 	                "╠❂➣ " + key + "ᴄʜᴀɴɢᴇᴘɪᴄᴛᴜʀᴇᴘʀᴏғɪʟᴇ" + "\n" + \
+	                "╠❂➣ " + key + "ᴇɴᴅᴄʜᴀᴛ" +  "\n" + \
 	                "╠❂➣ " + key + "ɢʀᴏᴜᴘʟɪsᴛ" + "\n" + \
 	                "╠❂➣ " + key + "ʀᴇsᴛᴀʀᴛ" + "\n" + \
 	                "╠❂➣ " + key + "ʀᴇsᴛᴏʀᴇᴘʀᴏғɪʟᴇ" + "\n" + \
@@ -2065,6 +2067,14 @@ def ririnBot(op):
                             elif cmd == "crash":
                             	if msg._from in admin:
                             		ririn.sendContact(to, "u1f41296217e740650e0448b96851a3e2',")
+                            elif cmd == "endchat":
+                            	if msg._from in Owner:
+                            		if wait["removechat"] == True:
+                            			if wait["Removechat"] == "JP":
+                            				ririn.sendMessage(msg.to, "ᴘʀᴏsᴇs ʀᴇᴍᴏᴠᴇ ᴄʜᴀᴛ...")
+                            		if wait["removechat"] == False:
+                            			if wait["lang"] == "JP":
+                            				pass
                             elif cmd.startswith("changename:"):
                             	if msg._from in Owner:
                             		sep = text.split(" ")
@@ -2993,10 +3003,34 @@ def ririnBot(op):
                         if text is not None:
                             ririn.sendMessage(msg.to,text)
                     if wait["removechat"] == True:
-                    	if msg.toType == 0:
-                    		ririn.removeAllMessages(op.param2)
-                    	else:
-                    		ririn.removeAllMessages(op.param2)
+                    	try:
+                    		if msg.toType == 0:
+                    			ririn.removeAllMessages(op.param2)
+                    			dna1.removeAllMessages(op.param2)
+                    			dna2.removeAllMessages(op.param2)
+                    			dna3.removeAllMessages(op.param2)
+                    			dna4.removeAllMessages(op.param2)
+                    			dna5.removeAllMessages(op.param2)
+                    			dna6.removeAllMessages(op.param2)
+                    			dna7.removeAllMessages(op.param2)
+                    			dna8.removeAllMessages(op.param2)
+                    			dna9.removeAllMessages(op.param2)
+                    			ririn.sendMessage(msg.to, "sᴜᴄᴄᴇs")
+                    		else:
+                    			ririn.removeAllMessages(op.param2)
+                    			dna1.removeAllMessages(op.param2)
+                    			dna2.removeAllMessages(op.param2)
+                    			dna3.removeAllMessages(op.param2)
+                    			dna4.removeAllMessages(op.param2)
+                    			dna5.removeAllMessages(op.param2)
+                    			dna6.removeAllMessages(op.param2)
+                    			dna7.removeAllMessages(op.param2)
+                    			dna8.removeAllMessages(op.param2)
+                    			dna9.removeAllMessages(op.param2)
+                    			ririn.sendMessage(msg.to, "sᴜᴄᴄᴇs")
+                    	except Exception as error:
+                    		logError(error)
+                    		ririn.sendMessage(msg.to, "ᴇʀʀᴏʀ")
                     if wait["unsendMessage"] == True:
                         try:
                             msg = op.message
