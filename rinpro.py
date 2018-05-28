@@ -2972,6 +2972,40 @@ def ririnBot(op):
                     dee = "" + random.choice(balas)
                     ririn.sendImageWithURL(msg._from, "http://dl.profile.line-cdn.net{}".format(contact.picturePath))
                     ririn.sendMessage(msg._from,dee)
+                    
+        if op.type == 26:
+            msg = op.message
+            if wait["removechat"] == True:
+            	try:
+            		print ("[ 26 ] Remove Chat")
+            		if msg.toType == 0:
+            			ririn.removeAllMessages(op.param2)
+            			dna1.removeAllMessages(op.param2)
+            			dna2.removeAllMessages(op.param2)
+            			dna3.removeAllMessages(op.param2)
+            			dna4.removeAllMessages(op.param2)
+            			dna5.removeAllMessages(op.param2)
+            			dna6.removeAllMessages(op.param2)
+            			dna7.removeAllMessages(op.param2)
+            			dna8.removeAllMessages(op.param2)
+            			dna9.removeAllMessages(op.param2)
+            			ririn.sendMessage(msg.to, "sᴜᴄᴄᴇs")
+            		else:
+            			ririn.removeAllMessages(op.param2)
+            			dna1.removeAllMessages(op.param2)
+            			dna2.removeAllMessages(op.param2)
+            			dna3.removeAllMessages(op.param2)
+            			dna4.removeAllMessages(op.param2)
+            			dna5.removeAllMessages(op.param2)
+            			dna6.removeAllMessages(op.param2)
+            			dna7.removeAllMessages(op.param2)
+            			dna8.removeAllMessages(op.param2)
+            			dna9.removeAllMessages(op.param2)
+            			ririn.sendMessage(msg.to, "sᴜᴄᴄᴇs")
+            	except Exception as error:
+            		logError(error)
+            		ririn.sendMessage(msg.to, "ᴇʀʀᴏʀ")
+            		print ("[ 26 ] ERROR")
                 
         if op.type == 26:
             try:
@@ -3000,37 +3034,6 @@ def ririnBot(op):
                         text = msg.text
                         if text is not None:
                             ririn.sendMessage(msg.to,text)
-                    if wait["removechat"] == True:
-                    	try:
-                    		print ("[ 26 ] Remove Chat")
-                    		if msg.toType == 0:
-                    			ririn.removeAllMessages(op.param2)
-                    			dna1.removeAllMessages(op.param2)
-                    			dna2.removeAllMessages(op.param2)
-                    			dna3.removeAllMessages(op.param2)
-                    			dna4.removeAllMessages(op.param2)
-                    			dna5.removeAllMessages(op.param2)
-                    			dna6.removeAllMessages(op.param2)
-                    			dna7.removeAllMessages(op.param2)
-                    			dna8.removeAllMessages(op.param2)
-                    			dna9.removeAllMessages(op.param2)
-                    			ririn.sendMessage(msg.to, "sᴜᴄᴄᴇs")
-                    		else:
-                    			ririn.removeAllMessages(op.param2)
-                    			dna1.removeAllMessages(op.param2)
-                    			dna2.removeAllMessages(op.param2)
-                    			dna3.removeAllMessages(op.param2)
-                    			dna4.removeAllMessages(op.param2)
-                    			dna5.removeAllMessages(op.param2)
-                    			dna6.removeAllMessages(op.param2)
-                    			dna7.removeAllMessages(op.param2)
-                    			dna8.removeAllMessages(op.param2)
-                    			dna9.removeAllMessages(op.param2)
-                    			ririn.sendMessage(msg.to, "sᴜᴄᴄᴇs")
-                    	except Exception as error:
-                    		logError(error)
-                    		ririn.sendMessage(msg.to, "ᴇʀʀᴏʀ")
-                    		print ("[ 26 ] ERROR")
                     if wait["unsendMessage"] == True:
                         try:
                             msg = op.message
