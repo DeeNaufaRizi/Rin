@@ -1305,7 +1305,7 @@ def ririnBot(op):
             msg = op.message
             if msg.toType == 0:
                 msg.to = msg._from
-                if msg._from == profile.mid:
+                if msg._from == ririnMid:
                     if "join:" in msg.text:
                         list_ = msg.text.split(":")
                         try:
