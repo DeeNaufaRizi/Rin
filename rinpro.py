@@ -134,7 +134,7 @@ wait = {
     "Protectgr": True,
     "Protectinvite": True,
     "Protectjoin": False,
-    "removechat": True,
+    "removechat": False,
     "setKey": False,
     "sider": False,
     "timeline":True,
