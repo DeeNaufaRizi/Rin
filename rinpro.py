@@ -2070,7 +2070,7 @@ def ririnBot(op):
                             elif cmd == "endchat":
                             	if msg._from in Owner:
                             		if wait["removechat"] == True:
-                            			if wait["Removechat"] == "JP":
+                            			if wait["removechat"] == "JP":
                             				ririn.sendMessage(msg.to, "ᴘʀᴏsᴇs ʀᴇᴍᴏᴠᴇ ᴄʜᴀᴛ...")
                             		if wait["removechat"] == False:
                             			if wait["lang"] == "JP":
