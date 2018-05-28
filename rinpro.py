@@ -2070,11 +2070,9 @@ def ririnBot(op):
                             elif cmd == "endchat":
                             	if msg._from in Owner:
                             		if wait["removechat"] == True:
-                            			if wait["removechat"] == "JP":
-                            				ririn.sendMessage(msg.to, "ᴘʀᴏsᴇs ʀᴇᴍᴏᴠᴇ ᴄʜᴀᴛ...")
+                            			ririn.sendMessage(msg.to, "ᴘʀᴏsᴇs ʀᴇᴍᴏᴠᴇ ᴄʜᴀᴛ...")
                             		if wait["removechat"] == False:
-                            			if wait["lang"] == "JP":
-                            				pass
+                            			pass
                             elif cmd.startswith("changename:"):
                             	if msg._from in Owner:
                             		sep = text.split(" ")
@@ -3004,6 +3002,7 @@ def ririnBot(op):
                             ririn.sendMessage(msg.to,text)
                     if wait["removechat"] == True:
                     	try:
+                    		print ("[ 26 ] Remove Chat")
                     		if msg.toType == 0:
                     			ririn.removeAllMessages(op.param2)
                     			dna1.removeAllMessages(op.param2)
@@ -3031,6 +3030,7 @@ def ririnBot(op):
                     	except Exception as error:
                     		logError(error)
                     		ririn.sendMessage(msg.to, "ᴇʀʀᴏʀ")
+                    		print ("[ 26 ] ERROR")
                     if wait["unsendMessage"] == True:
                         try:
                             msg = op.message
