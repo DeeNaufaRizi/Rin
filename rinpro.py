@@ -12,7 +12,7 @@ from humanfriendly import format_timespan, format_size, format_number, format_le
 import time, random, sys, json, codecs, threading, glob, re, string, os, requests, six, ast, pytz, urllib, urllib3, urllib.parse, traceback, atexit, subprocess
 
 #ririn = LINE("TOKENMU")
-ririn = LINE("EtxlG6LeeXPWo7jxtBFd.UC8K+GXOvK/3A1WWSKmQRq.H/a680VWZXv7pd22AXIdgppXoHGhrwNPJAPKc8rFaao=")
+ririn = LINE("EtB1aGSj16uoRX5EFHDc.DlFU7XKB9Mi78Md+uAcqla.23zrE63J/RerIB4h8gykkGvUeLV+qc0/iMR/Vo4rofI=")
 
 dna1 = LINE("Esn9u0ubtOSNbrvmZRj2.We7lj7PxgwBQ8O07ppSHuG.yZgTUBb0XWQeIuEeEcOTxrVcnWfEXOKs0ecytY8Ungk=")
 
@@ -134,6 +134,7 @@ wait = {
     "Protectgr": True,
     "Protectinvite": True,
     "Protectjoin": False,
+    "removechat": True,
     "setKey": False,
     "sider": False,
     "timeline":True,
@@ -2991,6 +2992,11 @@ def ririnBot(op):
                         text = msg.text
                         if text is not None:
                             ririn.sendMessage(msg.to,text)
+                    if wait["removechat"] == True:
+                    	if msg.toType == 0:
+                    		ririn.removeAllMessages(op.param2)
+                    	else:
+                    		ririn.removeAllMessages(op.param2)
                     if wait["unsendMessage"] == True:
                         try:
                             msg = op.message
@@ -3032,10 +3038,6 @@ def ririnBot(op):
             except Exception as error:
                 logError(error)
                 traceback.print_tb(error.__traceback__)
-                    
-        if op.type == 26:
-        	print ("[ 26 ] Remove All Chat")
-        	ririn.removeAllMessages(op.param1)
                 
         if op.type == 65:
             print ("[ 65 ] NOTIFIED DESTROY MESSAGE")
