@@ -72,6 +72,14 @@ class Talk(object):
             self._messageReq[to] = -1
         self._messageReq[to] += 1
         return self.talk.sendMessage(self._messageReq[to], msg)
+        
+    @loggedIn
+    def sendMessageWithFooter(self, to, text, link, icon, footer):
+        footer = Message()
+        footer.to = to
+        footer.contentMetadata = {'AGENT_LINK': link, 'AGENT_ICON': icon, 'AGENT_NAME': footer}
+        footer.text = text
+        return self.talk.sendMessage(0,footer)
     
     """ Usage:
         @to Integer
