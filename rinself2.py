@@ -1472,7 +1472,7 @@ def ririnBot(op):
                                     ret_ += "\nPrivate : " +str(data["result"]["private"])
                                     url = data["result"]["url"]
                                     path = data["result"]["photo"]
-                                    ririn.sendMessage(to, str(path))
+                                    ririn.sendImageWithURL(to, str(path))
                                     ririn.sendMessage(to, str(ret_),contentMetadata = {'AGENT_ICON': 'http://api.ntcorp.us/storage/get/52cAE97', 'AGENT_NAME': 'Instagram.', 'AGENT_LINK': str(url)})
                                 except:
                                     dzin.sendMessage(to, "Username not found.")
