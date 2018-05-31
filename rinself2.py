@@ -1458,34 +1458,24 @@ def ririnBot(op):
                                     logError(error)
                             elif cmd.startswith("instainfo"):
                                 try:
-                                    sep = text.split(" ")
-                                    search = text.replace(sep[0] + " ","")
-                                    r = requests.get("https://www.instagram.com/{}/?__a=1".format(search))
-                                    data = r.text
-                                    data = json.loads(data)
-                                    if data != []:
-                                        ret_ = "╔══[ Profile Instagram ]"
-                                        ret_ += "\n╠ Nama : {}".format(str(data["graphql"]["user"]["full_name"]))
-                                        ret_ += "\n╠ Username : {}".format(str(data["graphql"]["user"]["username"]))
-                                        ret_ += "\n╠ Bio : {}".format(str(data["graphql"]["user"]["biography"]))
-                                        ret_ += "\n╠ Pengikut : {}".format(str(data["graphql"]["user"]["edge_followed_by"]["count"]))
-                                        ret_ += "\n╠ Diikuti : {}".format(str(data["graphql"]["user"]["edge_follow"]["count"]))
-                                        if data["graphql"]["user"]["is_verified"] == True:
-                                            ret_ += "\n╠ Verifikasi : Sudah"
-                                        else:
-                                            ret_ += "\n╠ Verifikasi : Belum"
-                                        if data["graphql"]["user"]["is_private"] == True:
-                                            ret_ += "\n╠ Akun Pribadi : Iya"
-                                        else:
-                                            ret_ += "\n╠ Akun Pribadi : Tidak"
-                                        ret_ += "\n╠ Total Post : {}".format(str(data["graphql"]["user"]["edge_owner_to_timeline_media"]["count"]))
-                                        ret_ += "\n╚══[ https://www.instagram.com/{} ]".format(search)
-                                        url = data["result"]["url"]
-                                        path = data["graphql"]["user"]["profile_pic_url_hd"]
-                                        ririn.sendImageWithURL(to, str(path))
-                                        dzin.sendMessage(to, str(ret_),contentMetadata = {'AGENT_ICON': 'http://api.ntcorp.us/storage/get/52cAE97', 'AGENT_NAME': 'Instagram.', 'AGENT_LINK': str(url)})
-                                except Exception as error:
-                                    logError(error)
+                                    search = cmd.replace("instainfo ","")
+                                    r=requests.get("http://api.dzin.xyz/api/instaprofile/?apikey=beta&username={}".format(urllib.parse.quote(search)))
+                                    data=r.text
+                                    data=json.loads(data)
+                                    ret_ = "「 Instagram 」\n"
+                                    ret_ += "\nUsername : " +str(data["result"]["username"])
+                                    ret_ += "\nName : " +str(data["result"]["name"])
+                                    ret_ += "\nBio : " +str(data["result"]["bio"])
+                                    ret_ += "\nFollowers : " +str(data["result"]["followers"])
+                                    ret_ += "\nFollowing : " +str(data["result"]["following"])
+                                    ret_ += "\nPost Count : " +str(data["result"]["mediacount"])
+                                    ret_ += "\nPrivate : " +str(data["result"]["private"])
+                                    url = data["result"]["url"]
+                                    path = data["result"]["photo"]
+                                    ririn.sendMessage(to, str(path))
+                                    ririn.sendMessage(to, str(ret_),contentMetadata = {'AGENT_ICON': 'http://api.ntcorp.us/storage/get/52cAE97', 'AGENT_NAME': 'Instagram.', 'AGENT_LINK': str(url)})
+                                except:
+                                    dzin.sendMessage(to, "Username not found.")
                             elif cmd.startswith("instapost"):
                                 try:
                                     sep = text.split(" ")
