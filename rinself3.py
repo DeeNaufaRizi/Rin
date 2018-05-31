@@ -705,13 +705,13 @@ def ririnBot(op):
 #------------------------------------============================------------------------------------#
                             if cmd == "help":
                                 helpMessage = helpmessage()
-                                ririn.sendMessage(to, str(helpMessage),contentMetadata = {'AGENT_ICON': 'https://thumb.ibb.co/gcobQy/20180601_051942.png', 'AGENT_NAME': 'Help.', 'AGENT_LINK': 'http://line.me/ti/p/ppgIZ0JLDW'})
+                                ririn.sendMessage(to, str(helpMessage),contentMetadata = {'AGENT_ICON': 'http://thumb.ibb.co/gxbVky/20180601_051605.png', 'AGENT_NAME': 'Help.', 'AGENT_LINK': 'http://line.me/ti/p/ppgIZ0JLDW'})
                             elif cmd == "tts":
                                 helpTextToSpeech = helptexttospeech()
-                                ririn.sendMessage(to, str(helpTextToSpeech),contentMetadata = {'AGENT_ICON': 'https://thumb.ibb.co/gcobQy/20180601_051942.png', 'AGENT_NAME': 'Text To Speech.', 'AGENT_LINK': 'http://line.me/ti/p/ppgIZ0JLDW'})
+                                ririn.sendMessage(to, str(helpTextToSpeech),contentMetadata = {'AGENT_ICON': 'http://thumb.ibb.co/gxbVky/20180601_051605.png', 'AGENT_NAME': 'Text To Speech.', 'AGENT_LINK': 'http://line.me/ti/p/ppgIZ0JLDW'})
                             elif cmd == "translate":
                                 helpTranslate = helptranslate()
-                                ririn.sendMessage(to, str(helpTranslate),contentMetadata = {'AGENT_ICON': 'https://thumb.ibb.co/gcobQy/20180601_051942.png', 'AGENT_NAME': 'Translate.', 'AGENT_LINK': 'http://line.me/ti/p/ppgIZ0JLDW'})
+                                ririn.sendMessage(to, str(helpTranslate),contentMetadata = {'AGENT_ICON': 'http://thumb.ibb.co/gxbVky/20180601_051605.png', 'AGENT_NAME': 'Translate.', 'AGENT_LINK': 'http://line.me/ti/p/ppgIZ0JLDW'})
 #------------------------------------============================------------------------------------#
 #======================-----------✰ ᴅɴᴀ ʙᴏᴛ ✰-----------======================#
 #------------------------------------============================------------------------------------#
