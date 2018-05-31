@@ -705,7 +705,7 @@ def ririnBot(op):
 #------------------------------------============================------------------------------------#
                             if cmd == "help":
                                 helpMessage = helpmessage()
-                                ririn.sendMessage(to, str(helpMessage),contentMetadata = {'AGENT_ICON': 'https://thumb.ibb.co/nfhuTJ/20180601_040245.png', 'AGENT_NAME': 'Help.', 'AGENT_LINK': 'http://line.me/ti/p/ppgIZ0JLDW'})
+                                ririn.sendMessage(to, str(helpMessage),contentMetadata = {'AGENT_ICON': 'https://thumb.ibb.co/bHLy5y/20180601_050905.png', 'AGENT_NAME': 'Help.', 'AGENT_LINK': 'http://line.me/ti/p/ppgIZ0JLDW'})
                             elif cmd == "tts":
                                 helpTextToSpeech = helptexttospeech()
                                 ririn.sendMessage(to, str(helpTextToSpeech))
