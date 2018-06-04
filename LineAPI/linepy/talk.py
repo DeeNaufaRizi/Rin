@@ -72,20 +72,13 @@ class Talk(object):
             self._messageReq[to] = -1
         self._messageReq[to] += 1
         return self.talk.sendMessage(self._messageReq[to], msg)
-        
-    @loggedIn
-    def sendMessageWithFooter(self, to, text, link, icon, footer):
-        footer = Message()
-        footer.to = to
-        footer.contentMetadata = {'AGENT_LINK': link, 'AGENT_ICON': icon, 'AGENT_NAME': footer}
-        footer.text = text
-        return self.talk.sendMessage(0,footer)
     
     """ Usage:
         @to Integer
         @text String
         @dataMid List of user Mid
     """
+    
     @loggedIn
     def sendMessageWithMention(self, to, text='', dataMid=[]):
         arr = []
@@ -153,6 +146,24 @@ class Talk(object):
             self._messageReq[to] = -1
         self._messageReq[to] += 1
         return self.talk.sendMessageAwaitCommit(self._messageReq[to], msg)
+
+    @loggedIn
+    def sendMessageWithContent(self, to, text, name, url, iconlink):
+        contentMetadata = {
+            'AGENT_NAME': name,
+            'AGENT_LINK': url,
+            'AGENT_ICON': iconlink
+        }
+        return self.sendMessage(to, text, contentMetadata, 0)
+        
+    @loggedIn
+    def sendMentionWithContent(self, to, text, name, url, iconlink):
+        contentMetadata = {
+            'AGENT_NAME': name,
+            'AGENT_LINK': url,
+            'AGENT_ICON': iconlink
+        }
+        return self.sendMention(to, text="", mids=[])
 
     @loggedIn
     def unsendMessage(self, messageId):
